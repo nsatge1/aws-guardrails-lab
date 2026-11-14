@@ -1,0 +1,46 @@
+# --- Terraform ---
+# Provider plugins and modules downloaded by "terraform init" (large, rebuilt every time)
+.terraform/
+# State files: they describe your real AWS resources and can contain secrets
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+# Variable files often hold account IDs, emails or secrets. Commit a *.tfvars.example instead
+*.tfvars
+*.tfvars.json
+# Saved plans ("terraform plan -out=tfplan") can contain secrets
+*tfplan*
+# Local overrides and crash logs
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+crash.log
+crash.*.log
+# Personal Terraform CLI settings
+.terraformrc
+terraform.rc
+# NOTE: .terraform.lock.hcl is NOT ignored on purpose. Commit it: it pins the provider versions.
+
+# --- Real AWS data: never publish it ---
+# CloudTrail logs and Prowler reports contain your account ID, IP addresses and resource names
+logs/
+cloudtrail-logs/
+prowler-output/
+output/
+
+# --- Secrets ---
+.env
+*.pem
+
+# --- Python (Lambda code and scripts) ---
+__pycache__/
+*.py[cod]
+.venv/
+# Lambda packages are built by the pipeline, not stored in git
+*.zip
+
+# --- macOS and editors ---
+.DS_Store
+.idea/
+.vscode/
