@@ -18,9 +18,9 @@ For each attack, this repository shows if it was **blocked**, **detected** and *
 ## Roadmap (version 1)
 
 ### Week 1: foundations
-- [ ] AWS Organizations with a separate `lab` account (SCPs do not apply to the management account)
-- [ ] Budget alerts, and MFA for every human user
-- [ ] Terraform state in S3 (versioning, encryption, native locking)
+- [X] AWS Organizations with a separate `lab` account (SCPs do not apply to the management account)
+- [X] Budget alerts, and MFA for every human user
+- [X] Terraform state in S3 (versioning, encryption, native locking)
 - [ ] GitHub Actions with OIDC: `terraform fmt`, `validate`, `plan` and Checkov on every pull request
 
 ### Week 2: audit before and after
