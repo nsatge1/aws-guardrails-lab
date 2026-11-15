@@ -1,5 +1,7 @@
 # AWS Guardrails Lab
 
+[![Terraform](https://github.com/nsatge1/aws-guardrails-lab/actions/workflows/terraform.yml/badge.svg)](https://github.com/nsatge1/aws-guardrails-lab/actions/workflows/terraform.yml)
+
 > **Work in progress.** Version 1 is being built.
 
 I build a small AWS environment with Terraform, audit it, attack it, and fix it.

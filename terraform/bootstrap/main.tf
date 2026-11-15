@@ -1,6 +1,10 @@
 # The S3 bucket that stores the Terraform state of the whole lab.
 # Bucket names are shared by all AWS customers in the world, so the name starts with my GitHub username.
 resource "aws_s3_bucket" "tfstate" {
+  # Accepted risks, written like an audit finding: check ID, then the reason.
+  #checkov:skip=CKV_AWS_18:Accepted for a one-person lab. Access logs need a second bucket. Review in week 2 with CloudTrail data events.
+  #checkov:skip=CKV_AWS_144:Accepted. Versioning already protects the state. Replication doubles the cost, and the lab uses one region on purpose.
+  #checkov:skip=CKV2_AWS_62:Not needed. No process has to react when the state file changes.
   bucket = "nsatge1-aws-guardrails-lab-tfstate"
 
   # Terraform refuses to delete this bucket, even with "terraform destroy".
