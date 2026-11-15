@@ -1,0 +1,22 @@
+# Monthly update pull requests. The CI checks each one before you merge it.
+version: 2
+updates:
+  # GitHub Actions: all in one pull request, so actions that must change together stay together.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+
+  # Terraform: the AWS provider version in each stack.
+  - package-ecosystem: terraform
+    directories:
+      - /terraform/bootstrap
+      - /terraform/lab
+    schedule:
+      interval: monthly
+    groups:
+      terraform-providers:
+        patterns: ["*"]
